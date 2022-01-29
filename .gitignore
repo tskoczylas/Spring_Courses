@@ -5,6 +5,9 @@
 */out
 */mvnw.cmd
 */mvnw
+*/mvn
+*/*.md
+
 */README.MD
 */.gitignore
 */.mvn
