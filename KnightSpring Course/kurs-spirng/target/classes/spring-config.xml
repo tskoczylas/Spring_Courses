@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:contex="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+<contex:component-scan base-package="com.tomjava.kurs.spirng.domain"></contex:component-scan>
+    <contex:property-placeholder location="castle.properties"></contex:property-placeholder>
+    <bean id="quest" class="com.tomjava.kurs.spirng.domain.Quest"></bean>
+<bean id="knight" class="com.tomjava.kurs.spirng.domain.Knight">
+<constructor-arg index="0" value="Lancelot"></constructor-arg>
+<constructor-arg index ="1" value="22"></constructor-arg>
+    <property name="quest" ref="quest"></property>
+</bean>
+    <bean id="zamek" class="com.tomjava.kurs.spirng.domain.repository.InMemoryRepository" init-method="bulid" destroy-method="tearDown">
+        <constructor-arg ref="knight"/>
+        <property name="name" value="${my.castle.name:black walk }"></property>
+
+    </bean>
+
+
+</beans>

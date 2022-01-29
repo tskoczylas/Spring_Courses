@@ -1,0 +1,10 @@
+/__MACOSX
+*/.idea
+*/*.iml
+*/lib
+*/out
+*/mvnw.cmd
+*/mvnw
+*/README.MD
+*/.gitignore
+*/.mvn

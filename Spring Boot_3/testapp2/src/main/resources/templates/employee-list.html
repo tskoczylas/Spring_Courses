@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="htpp://www.thymeleaf.org">
+
+<head>
+    <title>My project </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+
+    <a th:href = "@{/add}"
+    class="btn btn-primary btn-sm mb-3"> Dodaj uzytkownika</a>
+
+
+    <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th> ID</th>
+        <th>Imie  </th>
+        <th>Nazwisko</th>
+        <th>email</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="tempe : ${employeeList}">
+        <td th:text = "${tempe.id}" />
+    <td th:text = "${tempe.firstName}" />
+        <td th:text =${tempe.lastName} />
+        <td th:text = ${tempe.email} />
+        <td>
+            <a th:href ="@{/update(employeeId=${tempe.id})}"
+               class="btn btn-info btn-sm"
+            > Update </a>
+
+            <a th:href ="@{/delete(employeeId=${tempe.id})}"
+              class="btn btn-info btn-sm"
+           >
+               Delete
+           </a>
+
+
+        </td>
+
+    </tbody>
+
+    </tr>
+
+
+</table>
+</div>
+
+
+</body>

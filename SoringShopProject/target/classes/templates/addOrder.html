@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona główna</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+</head>
+<body>
+<div class="jumbotron home-jumbo">
+    <div class="container text-center text-white jumbo-container">
+        <h1 class="display-3">Foodie</h1>
+        <p>Witaj. Twoje zamówienie to:</p>
+    </div>
+</div>
+<div class="media col-6 offset-3">
+    <div class="media-body">
+        <table  class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nazwa:</th>
+                <th scope="col">Cena</th>
+                <th> </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="orderList:${orderList}">
+
+            <td th:text="*{orderList.getKey()}"></td>
+            <td th:text="*{orderList.getValue().name}"></td>
+            <td th:text="*{orderList.getValue().price}"></td>
+                <td> <a  th:href="@{/deleteOrder(orderId=*{orderList.getKey()})}">Usun </a></td>
+
+            </tr>
+
+            <tr>
+                <th  >Suma:</th>
+                <th></th>
+                <th  th:text="${sumOrder}"></th>
+
+            </tr>
+            </tbody>
+
+        </table>
+
+
+
+</div>
+</div>
+
+<div class="media col-6 offset-3">
+    <div class="media-body">
+
+    <form action="#" th:method="post" th:action="@{/client/save}" th:object="${clientForm}">
+    <div class="form-group">
+        <label >Numer telefonu:</label>
+        <input th:field="*{telephone}"  class="form-control">
+        <a th:if="${#fields.hasErrors('telephone')}" th:error="*{telephone}"> Minimum 9 cyfr</a>
+    </div>
+    <div class="form-group">
+        <label  >Adress:</label>
+        <input th:field="*{adress}"  class="form-control"  >
+        <a th:if="${#fields.hasErrors('adress')}" th:error="*{adress}"> Minumum 9 znakow</a>
+
+        <input type="hidden" th:field="*{itemList}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Zamów</button>
+</form>
+</div>
+</div>
+</body>
+</html>
