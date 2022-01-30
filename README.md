@@ -7,7 +7,7 @@ I have completed  many courses including:
 (Spring &Hiberante created by Chad Darby){https://www.udemy.com/course/spring-hibernate-tutorial/)
 
 
-Below I’m providing a list of topics with examples of codes written by myself(in my projects or in 
+Below I am providing a list of topics with examples of codes written by myself(in my projects or in 
 classes written during  courses) 
 
 1. [Dependency Injection:](https://github.com/tskoczylas/Spring_Courses/tree/main/Spring%201)
@@ -26,12 +26,13 @@ classes written during  courses)
 * AOP Programming 
 
 4. Spring Security:
--Custom Login Page:
-- CSRF explatation
-- Acces based on Tole
+- Spring Configuration [example](https://github.com/tskoczylas/SchoolLibraryProject/tree/master/Toms-V2/src/main/java/com/tomsapp/Toms/V2/security)
+-Custom Login Page: [example](https://github.com/tskoczylas/SchoolLibraryProject/blob/master/Toms-V2/src/main/java/com/tomsapp/Toms/V2/controller/LoginController.java)
+- CSRF explanation
+- Access based on Role [example] (https://github.com/tskoczylas/Spring_Courses/blob/main/Spring%20Seciuirty/src/main/java/com/luv2code/springseciurity/demo/config/DemoSeciurityConfig.java)
 -Password Encryption
   
-  5. Rest
+ 5. Rest
 - JSON -> POJOs conversion
 - Rest Controller [example](https://github.com/tskoczylas/secret_santa/blob/master/src/main/java/com/tomsproject/secret_santa/controller/GameController.java)
 - @PathVariable for Rest [example](https://github.com/tskoczylas/secret_santa/blob/master/src/main/java/com/tomsproject/secret_santa/controller/AdminController.java)
